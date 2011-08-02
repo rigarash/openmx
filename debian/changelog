@@ -1,0 +1,33 @@
+openmx (3.2.4.dfsg-3) unstable; urgency=low
+
+  * Add XS-DM-Upload-Allowed: yes
+  * Use gfortran based Lapack (Closes: #466061)
+  * /usr/sbin empty directory removed
+  * Homepage moved to the homepage field
+  * Standards-Version bumped to 3.7.3
+  * Use quilt for patches
+  * Vcs-Svn and Vcs-Browser fields added
+
+ -- Ondrej Certik <ondrej@certik.cz>  Sat, 16 Feb 2008 12:30:31 +0100
+
+openmx (3.2.4.dfsg-2) unstable; urgency=low
+
+  [Ondrej Certik]
+  * Depends on libfftw3-dev instead of fftw3-dev (Closes: #445786)
+  * Ondrej Certik added to Uploaders.
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Mon, 08 Oct 2007 13:14:43 +0200
+
+openmx (3.2.4.dfsg-1) unstable; urgency=low
+
+  * New upstream release: applied patch #4
+  * Upload openmx to main (Closes: #428265)
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sun, 22 Jul 2007 22:44:18 +0200
+
+openmx (3.2-0oc1) unstable; urgency=low
+
+  * Initial unofficial release (Closes: #428265)
+
+ -- Ondrej Certik <ondrej@certik.cz>  Sat, 09 Jun 2007 12:41:34 +0000
+

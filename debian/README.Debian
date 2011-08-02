@@ -1,0 +1,21 @@
+openmx for Debian
+-----------------
+
+How to use it - unpack the upstream sources, go to the directory work and start
+the calculation:
+
+wget http://www.openmx-square.org/openmx3.2.tar.gz
+tar xzf openmx3.2.tar.gz
+cd openmx3.2/work
+openmx Methane.dat
+
+When you learn openmx, you don't have to use the upstream sources, just your
+own input files. The advantage of the above procedure is that it just works and
+gets you up and running.
+
+For other examples/documentation/tutorial, see the upstream homepage (follow
+the "Manual" link):
+
+http://www.openmx-square.org/
+
+ -- Ondrej Certik <ondrej@certik.cz>  Sat, 09 Jun 2007 12:41:34 +0000

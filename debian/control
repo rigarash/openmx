@@ -1,0 +1,24 @@
+Source: openmx
+Section: science
+Priority: extra
+Maintainer: Debian Scientific Computing Team <pkg-scicomp-devel@lists.alioth.debian.org>
+Uploaders: Christophe Prud'homme <prudhomm@debian.org>, Ondrej Certik <ondrej@certik.cz>
+Build-Depends: debhelper (>= 5), libfftw3-dev (>= 3.1.2-3), xsltproc, docbook-xsl, liblapack-dev, gfortran, quilt
+Standards-Version: 3.7.3
+XS-DM-Upload-Allowed: yes
+Homepage: http://www.openmx-square.org/
+Vcs-Svn: svn://svn.debian.org/pkg-scicomp/openmx/trunk
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-scicomp/openmx/trunk/?op=log
+
+Package: openmx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Package for nano-scale material simulations
+ OpenMX (Open source package for Material eXplorer) is a program package for
+ nano-scale material simulations based on density functional theories (DFT),
+ norm-conserving pseudopotentials and pseudo-atomic localized
+ basis functions. Since the code is designed for the realization of
+ large-scale ab initio calculations on parallel computers, it is anticipated
+ that OpenMX can be a useful and powerful tool for nano-scale material sciences
+ in a wide variety of systems such as biomaterials, carbon nanotubes, magnetic
+ materials, and nanoscale conductors.
