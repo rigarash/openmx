@@ -1,3 +1,15 @@
+openmx (3.5-1) unstable; urgency=low
+
+  * Team upload
+  * New upstream release
+  * Ondrej Certik removed from uploaders (Closes: #550414)
+  * XS-DM-Upload-Allowed: yes removed
+  * Standards-Version bumped to 3.9.2
+  * Migrated to Debian Science
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Wed, 03 Aug 2011 01:22:39 +0200
+
 openmx (3.2.4.dfsg-3) unstable; urgency=low
 
   * Add XS-DM-Upload-Allowed: yes

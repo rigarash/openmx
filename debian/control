@@ -1,14 +1,14 @@
 Source: openmx
 Section: science
 Priority: extra
-Maintainer: Debian Scientific Computing Team <pkg-scicomp-devel@lists.alioth.debian.org>
-Uploaders: Christophe Prud'homme <prudhomm@debian.org>, Ondrej Certik <ondrej@certik.cz>
-Build-Depends: debhelper (>= 5), libfftw3-dev (>= 3.1.2-3), xsltproc, docbook-xsl, liblapack-dev, gfortran, quilt
-Standards-Version: 3.7.3
-XS-DM-Upload-Allowed: yes
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Christophe Prud'homme <prudhomm@debian.org>
+Build-Depends: debhelper (>= 5), libfftw3-dev (>= 3.1.2-3), xsltproc, 
+ docbook-xsl, liblapack-dev, gfortran
+Standards-Version: 3.9.2
 Homepage: http://www.openmx-square.org/
-Vcs-Svn: svn://svn.debian.org/pkg-scicomp/openmx/trunk
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-scicomp/openmx/trunk/?op=log
+Vcs-Svn: svn://svn.debian.org/debian-science/packages/openmx/trunk
+Vcs-Browser: http://svn.debian.org/wsvn/debian-science/packages/openmx/trunk/
 
 Package: openmx
 Architecture: any

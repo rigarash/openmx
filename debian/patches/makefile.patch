@@ -1,35 +1,24 @@
-Index: openmx-3.2.4.dfsg/source/makefile
+Index: openmx-3.5/source/makefile
 ===================================================================
---- openmx-3.2.4.dfsg.orig/source/makefile	2007-03-14 15:30:03.000000000 +0100
-+++ openmx-3.2.4.dfsg/source/makefile	2008-02-16 12:12:43.438557644 +0100
+--- openmx-3.5.orig/source/makefile	2011-08-03 09:19:11.000000000 +0200
++++ openmx-3.5/source/makefile	2011-08-03 09:19:43.000000000 +0200
 @@ -95,8 +95,8 @@
+ #
  
  
- 
--CC      = gcc -O3 -Dnompi -I/usr/local/include -I/home/ozaki/include
+-CC      = gcc -O3 -Dnompi -Dnoomp -I/usr/local/include -I/home/ozaki/include
 -LIB     = -L/usr/local/lib -lfftw3 -llapack -lblas -lg2c -static
-+CC      = gcc -O3 -Dnompi
-+LIB     = -lfftw3 -llapack -lblas -lgfortran
++CC      = gcc -O3 -Dnompi -Dnoomp
++LIB     = -lfftw3 -llapack -lblas
  
  
  
-@@ -537,7 +537,7 @@
+@@ -554,7 +554,7 @@
  
  install:	$(PROG)
  	strip $(PROG)
 -	cp $(PROG) $(DESTDIR)/$(PROG)
 +	cp $(PROG) $(DESTDIR)/usr/bin/$(PROG)
- 
- #
- #
-@@ -545,8 +545,8 @@
- #
- #
- 
--clean:	$(PROG) $(OBJS)
--	rm $(PROG) $(OBJS)
-+clean:	
-+	rm -f $(PROG) $(OBJS)
  
  #
  #
