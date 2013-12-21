@@ -1,23 +1,50 @@
-Index: openmx-3.5/source/makefile
-===================================================================
---- openmx-3.5.orig/source/makefile	2011-08-03 09:19:11.000000000 +0200
-+++ openmx-3.5/source/makefile	2011-08-03 09:19:43.000000000 +0200
-@@ -95,8 +95,8 @@
+Author: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Reviewed-By: Daniel Leidert <dleidert@debian.org>
+Description: Adjust the makefile for the Debian build.
+ - Enable hardening.
+ - Fix linkage step.
+ - Don't strip binary to be policy compliant.
+Forwarded: not-needed
+
+--- a/source/makefile
++++ b/source/makefile
+@@ -93,10 +93,17 @@
+ # LIB= -L/opt/acml5.3.0/ifort64_mp/lib -lacml_mp -liomp5 -Wl,-rpath=/opt/acml5.3.0/ifort64_mp/lib -Wl,-rpath=/opt/acml5.3.0/ifort64_mp/lib -L/opt/fftw-3.3.3/lib -lfftw3 -pgf90libs
  #
  
++include /usr/share/dpkg/default.mk
++ifeq ($(DEB_HOST_MULTIARCH),amd64)
++DEB_SSE =
++else
++DEB_SSE = -Dnosse
++endif
  
--CC      = gcc -O3 -Dnompi -Dnoomp -I/usr/local/include -I/home/ozaki/include
--LIB     = -L/usr/local/lib -lfftw3 -llapack -lblas -lg2c -static
-+CC      = gcc -O3 -Dnompi -Dnoomp
-+LIB     = -lfftw3 -llapack -lblas
+-CC    = mpicc -openmp -O3 -I/usr/local/include
+-FC    = mpif90 -openmp -O3 -I/usr/local/include
+-LIB   = -L/usr/local/lib -lfftw3 -llapack -lblas -lg2c -static
++
++CC    = mpicc `dpkg-buildflags --get CPPFLAGS` `dpkg-buildflags --get CFLAGS` $(DEB_SSE) -fopenmp
++FC    = mpif90 `dpkg-buildflags --get CPPFLAGS` `dpkg-buildflags --get FFLAGS` -fopenmp
++LIB   = -lfftw3 -llapack -lblas `dpkg-buildflags --get LDFLAGS`
  
  
  
-@@ -554,7 +554,7 @@
+@@ -202,7 +209,7 @@
+ All:	$(PROG)
  
- install:	$(PROG)
- 	strip $(PROG)
+ openmx:	$(OBJS)
+-	$(CC) $(OBJS) $(STACK) $(LIB) -lm -o openmx
++	$(FC) $(OBJS) $(STACK) $(LIB) -lm -o openmx
+ 
+ openmx.o: openmx.c openmx_common.h tran_variables.h tran_prototypes.h
+ 	$(CC) -c openmx.c
+@@ -575,8 +582,8 @@
+ #
+ 
+ install: $(PROG)
+-	strip $(PROG)
 -	cp $(PROG) $(DESTDIR)/$(PROG)
++	mkdir -p $(DESTDIR)/usr/bin/
 +	cp $(PROG) $(DESTDIR)/usr/bin/$(PROG)
  
  #

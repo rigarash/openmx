@@ -1,89 +1,12 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# This file was originally written by Joey Hess and Craig Small.
-# As a special exception, when this file is copied by dh-make into a
-# dh-make output file, you may use that output file without restriction.
-# This special exception was added by Craig Small in version 0.37 of dh-make.
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+%:
+	dh $@ --sourcedirectory=source/
 
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
-	touch configure-stamp
-
-DB2MAN=/usr/share/sgml/docbook/stylesheet/xsl/nwalsh/manpages/docbook.xsl
-XP=xsltproc -''-nonet
-
-build: build-stamp
-
-build-stamp: configure-stamp
-	dh_testdir
-
-	cd source;$(MAKE)
-	$(XP) $(DB2MAN) debian/openmx.xml
-
-	touch $@
-
-clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp configure-stamp
-
-	cd source;$(MAKE) clean
-	rm -rf .pc/
-
-	dh_clean 
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k 
-	dh_installdirs
-
-	# Add here commands to install the package into debian/openmx.
-	cd source;$(MAKE) DESTDIR=$(CURDIR)/debian/openmx install
-	rm -r $(CURDIR)/debian/openmx/usr/sbin
-
-
-# Build architecture-independent files here.
-binary-indep: build install
-# We have nothing to do by default.
-
-# Build architecture-dependent files here.
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs 
-	dh_installdocs
-	dh_installexamples
-	dh_installman openmx.1
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install configure
-
-orig-tarball:
-	mkdir tmp; \
-	cd tmp; \
-	wget http://www.openmx-square.org/openmx3.2.tar.gz; \
-	wget http://www.openmx-square.org/bugfixed/07July02/patch3.2.4.tar.gz; \
-	tar xzf openmx3.2.tar.gz; \
-	cd openmx3.2/source/; \
-	tar xzf ../../patch3.2.4.tar.gz; \
-	cd .. ; \
-	rm openmx3.2.pdf; \
-	cd .. ; \
-	tar czf ../openmx_3.2.4.dfsg.orig.tar.gz openmx3.2; \
-	cd ..; rm -rf tmp
+override_dh_clean:
+	dh_clean source/elpa1.mod
+	find source -name "*openmx.oo" -delete

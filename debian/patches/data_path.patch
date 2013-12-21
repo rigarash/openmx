@@ -1,0 +1,15 @@
+Author: Daniel Leidert <dleidert@debian.org>
+Description: Set the data path accordingly to the Debian installation.
+Forwarded: not-needed
+
+--- a/source/Input_std.c
++++ b/source/Input_std.c
+@@ -91,7 +91,7 @@
+ 
+   input_string("System.CurrrentDirectory",filepath,"./");
+   input_string("System.Name",filename,"default");
+-  input_string("DATA.PATH",DFT_DATA_PATH,"../DFT_DATA13");
++  input_string("DATA.PATH",DFT_DATA_PATH,"/usr/share/openmx/DFT_DATA13");
+   input_int("level.of.stdout", &level_stdout,1);
+   input_int("level.of.fileout",&level_fileout,1);
+   input_logical("memory.usage.fileout",&memoryusage_fileout,0); /* default=off */

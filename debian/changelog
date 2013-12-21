@@ -1,3 +1,42 @@
+openmx (3.7.6-1) unstable; urgency=medium
+
+  * Team upload using dgit.
+  * Build without sse on !amd64 platforms (closes: #724260)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Sat, 21 Dec 2013 15:00:54 +0000
+
+openmx (3.7.6-0.1) unstable; urgency=low
+
+  * Non-maintainer upload
+  * New upstream release (closes: #716563).
+  * debian/compat: Raised to compat level 8.
+  * debian/control: Added openmx-data.
+    (Build-Depends): Dropped xsltproc and docbook-xsl. Added mpi-default-dev
+    and raised dh version to 8.
+    (Standards-Version): Bumped to 3.9.4.
+    (Vcs-Browser, Vcs-Svn): Fixed vcs-field-not-canonical.
+  * debian/copyright: Updated.
+  * debian/dirs : Dropped.
+  * debian/get-orig-source.sh: Added uscan-compliant script to create the .orig
+    tarball from the upstream source and patches.
+  * debian/openmx.1: Added.
+  * debian/openmx.install, debian/openmx-data.install: Added.
+  * debian/openmx.manpages: Added.
+  * debian/openmx.xml: Dropped in favor of debian/openmx.1.
+  * debian/patches/data_path.patch: Added.
+    - Set the path to the DFT tables.
+  * debian/patches/fix_typos.patch: Added:
+    - Fix all lintian reported typos.
+  * debian/patches/makefile.patch: Updated.
+    - Fix compiler and linker programs and flags.
+    - Don't strip the program to be policy compliant.
+  * debian/patches/series: Adjusted.
+  * debian/rules: Rewritten for dh. Dropped orig-tarball target in favor of
+    debian/get-orig-source.sh.
+  * debian/watch: Updated. Added debian/get-orig-source.sh script call.
+
+ -- Daniel Leidert <dleidert@debian.org>  Thu, 05 Sep 2013 17:00:46 +0200
+
 openmx (3.5-1) unstable; urgency=low
 
   * Team upload

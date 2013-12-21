@@ -1,57 +1,49 @@
-This package was debianized by Ondrej Certik <ondrej@certik.cz> on
-Sat, 09 Jun 2007 12:41:34 +0000.
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: OpenMX
+Upstream-Contact: Taisuke Ozaki
+ Present (15/May/2013) official address
+ .
+ Japan Advanced Institute of Science and Technology (JAIST)
+ Asahidai 1-1, Nomi, Ishikawa 923-1292, Japan
+ .
+ e-mail: <t-ozaki@jaist.ac.jp>
+Source: http://www.openmx-square.org/download.html
 
-The current Debian maintainer is Debian Scientific Computing Team
+Files: *
+Copyright: 2002-2013, Taisuke Ozaki
+           Partial Copyright 2002-2013 goes to Hiori Kino, Myung Joon Han,
+           Jaejun Yu, Fumiyuki Ishii, Hongming Weng, Kiyoyuki Terakura,
+           T.Ohwaki and M.Otani
+License: GPL-2+
 
-It was downloaded from http://www.openmx-square.org/. The upstream tarball was
-unpacked, the patch (also from upstream) applied and the file openmx3.2.pdf
-removed, because its source is not included. You can use:
+Files: DFT_DATA13/*
+Copyright: Taisuke Ozaki
+License: GPL-2+
+Comment: See also http://www.jaist.ac.jp/~t-ozaki/vps_pao2013/.
 
-debian/rules orig-tarball
+Files: debian/*
+Copyright: 2007, Ondrej Certik <ondrej@certik.cz>
+           2007-2011, Debian Science Team <debian-science-maintainers@l.a.d.o>
+           2013, Daniel Leidert <dleidert@debian.org>
+Comment: This package was debianized by Ondrej Certik <ondrej@certik.cz> on
+ Sat, 09 Jun 2007 12:41:34 +0000. The current Debian maintainer is Debian
+ Scientific Comp. Team <debian-science-maintainers@lists.alioth.debian.org>.
+License: GPL-2+
 
-to perform all of the operations above to generate the dfsg.orig.tar.gz.
-
-Upstream Author: 
-
-    Taisuke Ozaki
-
-     Present (Jan/01/2006) official address
-
-       RICS, National Institute of Advanced Industrial Science
-       and Technology (AIST), central 2, 1-1-1 Umezono, Tsukuba,
-       Ibaraki 305-8568, Japan
-
-       e-mail: t-ozaki@aist.go.jp
-
-Copyright: 
-
-    Copyright (C) 2002-2007 Taisuke Ozaki
-
-    The file source/Inputtools.c is Copyright (C), 2002, Hiori Kino.
-
-    The file source/jx.c is Copyright (C), 2003, Myung Joon Han, Jaejun Yu, and
-    Taisuke Ozaki.
-
-    The file source/polB.c is Copyright (C), 2006-2007, Fumiyuki Ishii and
-    Taisuke Ozaki.
-
-License:
-
-    Copyright (C) 2002-2007 Taisuke Ozaki
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, write to the Free Software Foundation, Inc.,
-    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-The Debian packaging is (C) 2007, Ondrej Certik <ondrej@certik.cz> and
-is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+Comment:
+ On Debian Systems the complete text of the GNU General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
