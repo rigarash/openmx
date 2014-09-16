@@ -1,3 +1,10 @@
+openmx (3.7.6-1.1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Add openmx-example package.
+
+ -- Ryo IGARASHI <rigarash@gmail.com>  Tue, 16 Sep 2014 14:20:50 +0900
+
 openmx (3.7.6-1) unstable; urgency=medium
 
   * Team upload using dgit.
